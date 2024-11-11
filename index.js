@@ -37,7 +37,7 @@ app.get('/membership-discount', (req, res) => {
 
 //Endpoint 3 : Calculate tax on the cart total /calculate-tax?cartTotal=3600>
 function calculateTax(cartTotal) {
-  return cartTotal + (cartTotal * taxRate) / 100;
+  return (cartTotal * taxRate) / 100;
 }
 app.get('/calculate-tax', (req, res) => {
   let cartTotal = parseFloat(req.query.cartTotal);
